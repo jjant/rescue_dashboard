@@ -1,0 +1,153 @@
+body {
+  background-color: #fafafa;
+}
+
+.catastrophe-container {
+  padding: 15px;
+  width: 100%;
+}
+
+.page-container {
+  display: flex;
+  width: 100%;
+}
+
+.element {
+  background: white;
+  padding: 5px;
+  border: 1px lightgray solid;
+}
+
+.main-container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.catastrophe-main, .dont-care-for-name {
+  display: flex;
+  justify-content: space-between;
+}
+
+.dont-care-for-name {
+  flex-wrap: wrap;
+  margin-right: 50px;
+  width: 50%;
+}
+
+.map-container {
+  width: 50%;
+  padding: 5px;
+
+  .map-header {
+  }
+}
+
+.top-items {
+  margin-bottom: 20px;
+  display: inline-flex;
+  justify-content: space-around;
+  padding: 0;
+
+  & > li {
+    display: inline-flex;
+    align-items: center;
+    border-radius: 2px;
+    color: white;
+    width: 320px;
+    height: 100px;
+    padding-left: 20px;
+  }
+}
+
+.li-1 {
+  background-color: #E8B4BC;
+}
+
+.li-2 {
+  background: #29ABE2;
+}
+
+.li-3 {
+  background: #7FD1B9;
+}
+
+.li-4 {
+  background: #C6CAED;
+}
+
+.li-image {
+  background: rgba(darkgray, 0.3);
+  border-radius: 100%;
+  width: 60px;
+  padding: 5px;
+}
+
+.li-text {
+  height: 60px;
+  padding: 0 10px;
+}
+
+.li-main {
+  margin: 0;
+}
+
+.other-information {
+  margin-top: 20px;
+  width: 100%;
+  height: 50%;
+  display: flex;
+  flex-direction: column;
+}
+
+.recent-information {
+  flex: 1;
+  height: calc(781px - 30px);
+  max-height: calc(781px - 30px);
+}
+
+.catastrophe {
+  width: 100%;
+  height: 50%;
+}
+
+.percent-items-list {
+  margin-bottom: 20px;
+  display: inline-flex;
+  justify-content: space-between;
+  padding: 0;
+  width: 100%;
+  list-style: none;
+
+  & > li {
+    flex: 1;
+    background: white;
+    border: 1px lightgray solid;
+    height: 80px;
+    padding: 10px;
+
+    &:not(:first-child) {
+      margin: 0 0 0 20px;
+    }
+  }
+
+  .progress {
+    height: 10px;
+  }
+}
+
+.percent-list-text {
+  display: flex;
+  justify-content: space-between;
+}
+
+.title-boxed {
+  border: 1px solid lightgray;
+  margin: 3px;
+  padding: 5px;
+  margin-bottom: 10px;
+}
+
+.inner-span {
+  padding-left: 5px;
+}

@@ -1,0 +1,26 @@
+.percent-items
+  ul.percent-items-list
+    li
+      .percent-list-text
+        p
+          | Personas rescatadas
+        p
+          | #{people_rescued} / #{people_total}
+      .progress
+        .progress-bar(style="width: calc(#{people_rescued}% / #{people_total} * 100)")
+    li
+      .percent-list-text
+        p
+          | Edificios apagados
+        p
+          | #{building_rescued} / #{building_total}
+      .progress
+        .progress-bar(style="width: calc(#{people_rescued}% / #{people_total} * 100)")
+    li
+      .percent-list-text
+        p
+          | Superficie explorada (metros cuadrados)
+        p
+          | #{surface_covered} / #{total_surface}
+      .progress
+        .progress-bar(style="width: calc(#{surface_covered}% / #{total_surface} * 100)")

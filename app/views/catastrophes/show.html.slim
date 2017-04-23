@@ -1,0 +1,81 @@
+- provide(:content_cache, 'no-cache')
+.catastrophe-info.hidden(catastrophe=[@lat, @lng])
+.page-container(ng-controller='catastrophesController as ctsCtrl')
+  .catastrophe-container(ng-init='catastrophe = ctsCtrl.catastrophe')
+    .main-container
+      ul.top-items
+        li.li-1.affected-people.element
+          .li-image
+            = image_tag('avatar.svg')
+          .li-text
+            h1.li-main
+              | {{ ctsCtrl.catastrophe.affected_people }}
+            span
+              |  Personas afectadas
+        li.li-2.affected-surface.element
+          .li-image
+            = image_tag('location.svg')
+          .li-text
+            h1.li-main
+              | {{ ctsCtrl.catastrophe.affected_surface }}
+            span
+              |  Metros cuadrados
+        li.li-3.affected-drones.element
+          .li-image
+            = image_tag('drone.svg')
+          .li-text
+            h1.li-main
+              | {{ ctsCtrl.catastrophe.drones }}
+            span
+              |  Drones patrullando la zona
+        li.li-4.affected-drones.element
+          .li-image
+            = image_tag('telemarketer.svg')
+          .li-text
+            h1.li-main
+              | {{ ctsCtrl.catastrophe.agents_online }}
+            span
+              |  Agentes monitoreando el sistema
+      = render('percent_items', people_total: '{{ ctsCtrl.catastrophe.affected_people }}', \
+                                people_rescued: '{{ ctsCtrl.catastrophe.people_rescued }}', \
+                                building_total: '{{ ctsCtrl.catastrophe.affected_buildings }}', \
+                                building_rescued: '{{ ctsCtrl.catastrophe.building_rescued }}', \
+                                surface_covered: '{{ ctsCtrl.catastrophe.surface_covered }}', \
+                                total_surface: '{{ ctsCtrl.catastrophe.affected_surface }}')
+      .catastrophe-main
+        .dont-care-for-name
+          .catastrophe.element
+            h2.title-boxed
+              | {{ ctsCtrl.catastrophe.name }}
+            .stuff
+              h3
+                | Informacion inicial:
+              p
+                strong
+                  | Coordenadas:
+                br
+                span.inner-span
+                  |    [{{ ctsCtrl.catastrophe.lat }}, {{ ctsCtrl.catastrophe.lng }}].
+              p
+                strong
+                  | Descripción:
+                br
+                span.inner-span
+                  | {{ ctsCtrl.catastrophe.description }}
+          .other-information.element
+            h2.title-boxed
+              | Actividad reciente
+            ul#recent-information
+              li(ng-repeat="info in ctsCtrl.catastrophe.drone_reports")
+                p
+                  | {{ info.message }}
+        .map-container.element
+          h2.map-header.title-boxed
+            | Zonas afectadas
+          #map(
+            style="height: 500px; width: 100%;"
+          )
+    script(
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCNAuqoz8rTBk9q9RLHlcIFu-FTXA-M-M4&libraries=geometry,drawing,visualization"
+      defer="true"
+    )
