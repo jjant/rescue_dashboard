@@ -12,7 +12,7 @@ $( document ).on('turbolinks:load', function() {
     buildLine('{w}wFbhkcMxhUkp@s@ioFs@arI}sNflA_LwkJvpEpVbGjbQV@hdSsGqkDpaMeu]srX');
     buildLine('mm`wF`fraMgaC`vSi|Evg@unAovJxoIvrMghAh_Lk}D}_Ds@qmv@{dDzsSwiDncWj_F|x@|]{yEyxHrV');
     var position = { lat: 40.7227, lng: -74.00408 };
-    addMarkerWithTimeout(position, 8500);
+    addMarkerWithTimeout(position, 17500);
   }
 
   function addMarkerWithTimeout(position, timeout) {

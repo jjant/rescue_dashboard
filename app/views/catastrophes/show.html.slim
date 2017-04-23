@@ -66,9 +66,13 @@
             h2.title-boxed
               | Actividad reciente
             ul#recent-information
-              li(ng-repeat="info in ctsCtrl.catastrophe.drone_reports")
+              li.recent-item(ng-repeat="info in ctsCtrl.catastrophe.drone_reports")
                 p
                   | {{ info.message }}
+                a.drone-image(ng-href="{{ctsCtrl.images[info.id]}}")
+                  | Ver imagen
+                button.delete-item(href="#" ng-click="ctsCtrl.deleteReport(info.id)")
+                  | REPORTAR
         .map-container.element
           h2.map-header.title-boxed
             | Zonas afectadas

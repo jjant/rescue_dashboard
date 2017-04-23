@@ -4,6 +4,11 @@ angular.module('resq_dashboard').factory('catastropheService', [
     return {
       fetchCatastrophe: function(id) {
         return fetch(baseUrl + '/' + id);
+      },
+      deleteReport: function(id, reportId) {
+        return fetch(baseUrl + '/' + id + '/' + 'drone_report/'+ reportId, {
+          method: "DELETE"
+        });
       }
     };
   }

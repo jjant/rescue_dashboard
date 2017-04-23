@@ -100,10 +100,58 @@ body {
   flex-direction: column;
 }
 
-.recent-information {
+#recent-information {
   flex: 1;
-  height: calc(781px - 30px);
-  max-height: calc(781px - 30px);
+  list-style: none;
+  padding: 0;
+}
+
+.recent-item {
+  width: 100%;
+  margin: 0;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  padding-left: 10px;
+  justify-content: space-between;
+
+  & > * {
+    margin: 0;
+  }
+
+  &:nth-child(even) {
+    background: rgba(#29ABE2, 0.6);
+  }
+  &:nth-child(odd) {
+    background: rgba(#7FD1B9, 0.6);
+  }
+}
+
+.drone-image,
+.delete-item {
+  height: 100%;
+  padding: 0 5px;
+
+  display: flex;
+  align-items: center;
+  background: #F62E2E;
+  font-weight: bold;
+  color:  white;
+  border: 0;
+
+ &,
+ &:link,
+ &:active,
+ &:hover,
+ &:visited {
+   color: white;
+   text-decoration: none;
+ }
+}
+
+.drone-image {
+  background: #29ABE2;
+  min-width: 90px;
 }
 
 .catastrophe {

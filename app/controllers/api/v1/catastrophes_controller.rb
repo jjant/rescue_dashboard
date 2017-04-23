@@ -9,6 +9,10 @@ module Api
         catastrophe.drone_reports << DroneReport.create(drone_report_params)
       end
 
+      def delete_drone_report
+        DroneReport.delete(params[:report_id])
+      end
+
       private
 
       def catastrophe
