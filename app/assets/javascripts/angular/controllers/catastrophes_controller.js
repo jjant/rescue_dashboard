@@ -1,6 +1,6 @@
 angular.module('resq_dashboard').controller('catastrophesController', [
-  '$scope', 'catastropheService', '$interval',
-  function ($scope, catastropheService, $interval) {
+  '$scope', 'catastropheService', '$interval', '$location',
+  function ($scope, catastropheService, $interval, $location) {
     this.catastrophe = {
       id: '',
       name: '',

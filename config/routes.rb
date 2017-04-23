@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  root to: 'application#index'
+  root to: 'catastrophes#show', id: 1
 
   require 'sidekiq/web'
   mount Sidekiq::Web, at: 'sidekiq'
