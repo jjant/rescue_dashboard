@@ -2,25 +2,28 @@
   ul.percent-items-list
     li
       .percent-list-text
-        p
+        p.progress-bar-text
           | Personas rescatadas
-        p
-          | #{people_rescued} / #{people_total}
       .progress
         .progress-bar(style="width: calc(#{people_rescued}% / #{people_total} * 100)")
+          | #{people_rescued}
+        .resto-de-la-barra(style="width: calc((1 - (#{people_rescued} / #{people_total})) * 100%); float: right;")
+          | #{people_total}
     li
       .percent-list-text
-        p
+        p.progress-bar-text
           | Edificios apagados
-        p
-          | #{building_rescued} / #{building_total}
       .progress
         .progress-bar(style="width: calc(#{people_rescued}% / #{people_total} * 100)")
+          | #{building_rescued}
+        .resto-de-la-barra(style="width: calc((1 - (#{people_rescued} / #{people_total})) * 100%); float: right;")
+          | #{building_total}
     li
       .percent-list-text
-        p
-          | Superficie explorada (metros cuadrados)
-        p
-          | #{surface_covered} / #{total_surface}
+        p.progress-bar-text
+          | Superficie explorada
       .progress
         .progress-bar(style="width: calc(#{surface_covered}% / #{total_surface} * 100)")
+          | #{surface_covered.to_i.positive? ? "#{surface_covered} m²" : ''} 
+        .resto-de-la-barra(style="width: calc((1 - (#{surface_covered} / #{total_surface})) * 100%); float: right;")
+          | #{total_surface} m²

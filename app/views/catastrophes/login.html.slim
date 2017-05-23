@@ -1,0 +1,22 @@
+.sign-up-form-wrapper.column.column-middle.column-center.background-daintree
+  - if flash.present?
+    .flash-messages-wrapper
+      - flash.each do |message_type, messages|
+        - if messages.respond_to? :each
+          ul class="flash-list alert alert-danger"
+              li class="flash-error-message"
+                = messages.join(', ')
+        - else
+          span class="alert flash-error-message alert-danger"
+            = messages
+  = form_tag(loginPost_catastrophes_path, method: :post, class: 'sign-up-form center column column-middle column-center background-white')
+    h1(class="medium-logo" style="font-weight: bold;")
+      span
+        | RES
+      span(style="color: red;")
+        | CUE
+    = email_field_tag(:email, '', autofocus: true, placeholder: 'Email'  , class: 'sign-up-field border-daintree')
+    = password_field_tag(:password, '', autocomplete: 'off', placeholder: 'Contraseña', class: 'sign-up-field border-daintree')
+    .actions.row.m-top-auto.sign-up-actions.row-space-between.column-center
+      = submit_tag('Ingresar', class: 'sign-up-button button-1 background-daintree')
+      = link_to('¿Olvidaste tu contraseña?', '', class: 'dusty-gray')

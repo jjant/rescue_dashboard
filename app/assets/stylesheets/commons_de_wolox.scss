@@ -1,0 +1,663 @@
+* {
+  font-family: 'Helvetica Neue', Helvetica;
+}
+
+html,
+body {
+  min-height: 100vh;
+}
+
+input[type='checkbox'] {
+  margin: 0 5px 0 0;
+  width: 18px;
+  height: 18px;
+}
+
+label {
+  margin: 0;
+}
+
+h1 {
+  margin: 0;
+}
+
+body {
+  overflow-y: scroll;
+}
+
+.datepicker {
+  border-radius: 0;
+}
+
+::placeholder {
+  color: $dusty-gray;
+  opacity: 0.5;
+  transition: opacity 0.35s ease-in-out;
+  font-size: 14px;
+}
+
+:hover {
+  &::placeholder {
+    opacity: 0.75;
+  }
+}
+
+:focus {
+  &::placeholder {
+    opacity: 0;
+  }
+}
+
+.block {
+  display: block;
+}
+
+.inline-block {
+  display: inline-block;
+}
+
+.bold {
+  font-weight: 700;
+}
+
+.center-text {
+  text-align: center;
+}
+
+.left-text {
+  text-align: left;
+}
+
+.end-text {
+  text-align: end;
+}
+
+.absolute {
+  position: absolute;
+}
+
+.column {
+  display: flex;
+  flex-direction: column;
+}
+
+.column-center {
+  align-items: center;
+}
+
+.column-middle {
+  justify-content: center;
+}
+
+.column-left {
+  align-items: flex-start;
+}
+
+.row {
+  display: flex;
+  flex-direction: row;
+
+  &.wrap {
+    flex-wrap: wrap;
+  }
+}
+
+.row-left {
+  justify-content: flex-start;
+}
+
+.row-right {
+  justify-content: flex-end;
+}
+
+.row-items-top {
+  align-items: flex-start;
+}
+
+.column-space-between,
+.row-space-between {
+  justify-content: space-between;
+}
+
+.column-space-around,
+.row-space-around {
+  justify-content: space-around;
+}
+
+.row-center {
+  justify-content: center;
+}
+
+.row-middle {
+  align-items: center;
+}
+
+.row-top {
+  align-items: flex-start;
+}
+
+.row-end {
+  justify-content: flex-end;
+}
+
+.stretch {
+  align-items: stretch;
+}
+
+.item-flex-end {
+  align-self: flex-end;
+}
+
+.item-center {
+  align-self: center;
+  text-align: center;
+}
+
+.item-flex-end {
+ align-self: flex-end;
+}
+
+.width-100 {
+  width: 100%;
+}
+
+.m-top-auto {
+  margin-top: auto;
+}
+
+.m-left-auto {
+  margin-left: auto;
+}
+
+.m-right-auto {
+  margin-right: auto;
+}
+
+.m-bottom-auto {
+  margin-bottom: auto;
+}
+
+.margin-0 {
+  margin: 0;
+}
+
+.center {
+  margin: 0 auto;
+}
+
+.relative {
+  position: relative;
+}
+
+.bottom {
+  bottom: 0;
+}
+
+.top {
+  top: 0;
+}
+
+.right {
+  right: 0;
+}
+
+.left {
+  left: 0;
+}
+
+.cover-parent {
+  width: 100%;
+  height: 100%;
+}
+
+.background-daintree {
+  background: $daintree;
+}
+
+.background-daintree-02 {
+  background: $daintree-02;
+}
+
+.background-daintree-04 {
+  background: $daintree-04;
+}
+
+.background-white {
+  background: $white;
+}
+
+.background-gallery {
+  background: $gallery;
+}
+
+.background-transparent {
+  background: transparent;
+}
+
+.background-alto {
+  background: $alto;
+}
+
+.background-mercury {
+  background: $mercury;
+}
+
+.background-koromiko {
+  background: $koromiko;
+}
+
+.background-bittersweet {
+  background: $bittersweet;
+}
+
+.background-dusty-gray {
+  background: $dusty-gray;
+}
+
+.background-tundora {
+  background: $tundora;
+}
+
+.background-dusty-gray-wizard {
+  background: $dusty-gray-wizard;
+}
+
+.background-silver-chalice {
+  background: $silver-chalice;
+}
+
+.background-casper {
+  background: $casper;
+}
+
+.background-onahau {
+  background: $onahau;
+}
+
+.background-anakiwa {
+  background: $anakiwa;
+}
+
+.background-japanese-laurel {
+  background: $japanese-laurel;
+}
+
+.background-mantis {
+  background: $mantis;
+}
+
+.background-golden-fizz {
+  background: $golden-fizz;
+}
+
+.background-silver {
+  background: $silver;
+}
+.button-1 {
+  text-align: center;
+  text-transform: uppercase;
+  color: $white;
+  border: 0;
+  padding: 0 25px;
+  cursor: pointer;
+
+  &:hover,
+  &:active,
+  &:focus {
+    color: $white;
+  }
+}
+
+.button-2 {
+  text-align: center;
+  border-radius: 6px;
+  border: 0;
+  padding: 0 15px;
+  height: 30px;
+  line-height: 30px;
+  cursor: pointer;
+
+  &:hover,
+  &:active,
+  &:focus {
+    color: $white;
+  }
+}
+
+.button-3 {
+  font-size: 12px;
+  color: $daintree;
+  text-decoration: none;
+  border: 0;
+
+  &:hover,
+  &:active,
+  &:focus {
+    text-decoration: none;
+    color: $daintree;
+  }
+}
+
+.dusty-gray {
+  color: $dusty-gray;
+}
+
+.daintree {
+  color: $daintree;
+}
+
+.white {
+  color: $white;
+}
+
+.mantis {
+  color: $mantis;
+}
+
+.monza {
+  color: $monza;
+}
+
+.tradewind {
+  color: $tradewind;
+}
+
+.killarney {
+  color: $killarney;
+}
+
+.tundora {
+  color: $tundora;
+}
+
+.onahau {
+  color: $onahau;
+}
+
+.anakiwa {
+  color: $anakiwa;
+}
+
+.dusty-gray-wizard {
+  color: $dusty-gray-wizard;
+}
+
+.turquoise-blue {
+  color: $turquoise-blue;
+}
+
+.border-dusty-gray {
+  border: 1px solid $dusty-gray;
+}
+
+.border-daintree {
+  border: 1px solid $daintree;
+}
+
+.border-bottom-daintree {
+  border-bottom: 1px solid $daintree;
+}
+
+.border-dusty-gray-wizard {
+  border: 1px solid $dusty-gray-wizard;
+}
+
+.border-black {
+  border: 1px solid $black;
+}
+
+.border-tundora {
+  border: 1px solid $tundora;
+}
+
+.thick-border-daintree {
+  border: 10px solid $daintree;
+}
+
+.header-1 {
+  font-size: 22px;
+  color: $daintree;
+  letter-spacing: 0;
+  text-align: left;
+  display: inline;
+  margin-right: 20px;
+}
+
+.text-1 {
+  font-size: 16px;
+  letter-spacing: 0;
+  text-align: left;
+}
+
+.header-wrapper-1 {
+  margin: 0;
+  width: 100%;
+  margin-top: 30px;
+  border-bottom: 5px solid $daintree;
+  padding: 3px;
+}
+
+.header-wrapper-2 {
+  margin: 0;
+  width: 100%;
+  margin: 30px 0;
+  border-bottom: 1px solid $daintree;
+  padding: 3px;
+}
+
+.clear-link {
+  &,
+  &:link,
+  &:visited,
+  &:hover,
+  &:active {
+    text-decoration: none;
+  }
+}
+
+.clear-button {
+  border: 0;
+  &,
+  &:link,
+  &:visited,
+  &:hover,
+  &:active {
+    border: 0;
+  }
+}
+
+.link-button {
+  width: 100%;
+  text-align: center;
+}
+
+.rotate-180 {
+  transform: rotate(180deg);
+}
+
+.rotate-270 {
+  transform: rotate(270deg);
+}
+
+.black {
+  color: $black;
+}
+
+.uppercase {
+  text-transform: uppercase;
+ }
+
+.ng-cloak {
+  display: none !important;
+}
+
+.no-select {
+  user-select: none;
+}
+
+.no-drag {
+  user-drag: none;
+  -webkit-user-drag: none;
+}
+
+.no-outline {
+  outline: none;
+}
+
+.cursor-pointer {
+  cursor: pointer;
+}
+
+.white-link {
+
+  &,
+  &:link,
+  &:visited,
+  &:hover,
+  &:active  {
+    color: $white;
+  }
+}
+
+.clear-button {
+  border: none;
+
+  &,
+  &:link,
+  &:visited,
+  &:hover,
+  &:active {
+    border: none;
+  }
+
+  &:focus {
+    outline: 0;
+  }
+}
+
+.flex-col-1 {
+  flex: 1;
+}
+
+.flex-col-2 {
+  flex: 2;
+}
+
+.flex-col-3 {
+  flex: 3;
+}
+
+.flex-col-4 {
+  flex: 4;
+}
+
+.flex-col-5 {
+  flex: 5;
+}
+
+.flex-col-6 {
+  flex: 6;
+}
+
+.flex-col-7 {
+  flex: 7;
+}
+
+.flex-col-8 {
+  flex: 8;
+}
+
+.general-wrap {
+  margin: 0 30px;
+}
+
+.padding-20 {
+  padding: 20px;
+}
+
+.table-cell {
+  display: table-cell;
+}
+
+.vertical-align-middle {
+  vertical-align: middle;
+}
+
+.break-words {
+  word-wrap: break-word;
+}
+
+.text-ellipsis {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.margin-0 {
+  margin: 0;
+}
+
+.sign-up-form-wrapper {
+  min-height: 100vh;
+
+  .sign-up-form {
+    max-width: 400px;
+    width: 100%;
+  }
+
+  .sign-up-field {
+    max-width: 300px;
+    width: 100%;
+    height: 40px;
+    padding-left: 10px;
+    margin-bottom: 20px;
+  }
+
+  .sign-up-button {
+    height: 40px;
+    line-height: 40px;
+
+    &,
+    &:hover,
+    &:active {
+      text-decoration: none;
+    }
+  }
+
+  .sign-up-actions {
+    max-width: 300px;
+    width: 100%;
+    margin-bottom: 40px;
+  }
+
+  .medium-logo {
+    margin: 40px;
+  }
+
+  .flash-messages-wrapper {
+    max-width: 400px;
+    width: 100%;
+  }
+}
+
+.field_with_errors {
+  margin-bottom: 20px;
+  max-width: 300px;
+  width: 100%;
+  height: 40px;
+}
+
+.flash-messages-wrapper {
+  max-width: 800px;
+  width: 100%;
+  margin: 20px auto;
+
+  .flash-error-message {
+    display: block;
+  }
+
+  .flash-list {
+    list-style: none;
+    margin: 0;
+  }
+}

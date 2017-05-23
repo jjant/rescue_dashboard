@@ -77,6 +77,8 @@ gem 'recipient_interceptor'
 # Api versions
 gem 'versionist'
 
+gem 'rest-client'
+
 group :development do
   # Gem to detect N+1 queries
   gem 'better_errors'

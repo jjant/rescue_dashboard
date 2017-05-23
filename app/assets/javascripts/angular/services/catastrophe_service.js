@@ -9,7 +9,8 @@ angular.module('resq_dashboard').factory('catastropheService', [
         return fetch(baseUrl + '/' + id + '/' + 'drone_report/'+ reportId, {
           method: "DELETE"
         });
-      }
+      },
+      startSimulation: function() { return fetch(baseUrl + '/simulation'); },
     };
   }
 ]);

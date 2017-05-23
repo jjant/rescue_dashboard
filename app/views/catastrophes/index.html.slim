@@ -1,0 +1,42 @@
+.index
+  div class="table-title"
+    h3
+      | Listado de catastrofes
+
+  table class="table-fill"
+    thead
+      tr
+        th.text-center.bold.max-width-400
+          | Titulo
+        th.text-center.bold.max-width-400
+          | Descripción
+        th.text-center.bold.max-width-400
+          | Personas afectadas
+        th.text-center.bold.max-width-400
+          | Agentes monitoreando
+        th.text-center.bold.max-width-400
+          | Superficie afectada
+        th.text-center.bold.max-width-400
+          | Finalizada
+
+    tbody class="table-hover"
+      - @catastrophes.each do |catastrophe|
+        tr.js-link-to-catastrophe.link-row(data-catastrophe-url=catastrophe_path(catastrophe))
+          td.text-center.max-width-400
+            = catastrophe.name
+          td.text-center.max-width-400
+            = catastrophe.description
+          td.text-center.max-width-400
+            = catastrophe.affected_people
+          td.text-center.max-width-400
+            = catastrophe.affected_surface
+          td.text-center.max-width-400
+            = catastrophe.agents_online
+          td.text-center.max-width-400
+            | #{catastrophe.id.even? ? 'Si' : 'No'}
+  javascript:
+    $(() => {
+      $('.js-link-to-catastrophe').click(function() {
+        window.location = $(this).data('catastrophe-url');
+      })
+    })

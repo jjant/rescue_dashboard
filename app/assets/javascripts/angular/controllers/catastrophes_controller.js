@@ -1,6 +1,6 @@
 angular.module('resq_dashboard').controller('catastrophesController', [
-  '$scope', 'catastropheService', '$interval', '$location',
-  function ($scope, catastropheService, $interval, $location) {
+  '$scope', 'catastropheService', '$interval', '$location', '$window',
+  function ($scope, catastropheService, $interval, $location, $window) {
     this.catastrophe = {
       id: '',
       name: '',
@@ -25,14 +25,20 @@ angular.module('resq_dashboard').controller('catastrophesController', [
 
     this.updateCatastrophe = function() {
       var fetchAndUpdateCatastrophe = function() {
-        catastropheService.fetchCatastrophe(1)
+        const catastropheId = $location.absUrl().split('/').reverse()[0];
+        catastropheService.fetchCatastrophe(catastropheId)
                           .then(function(data) { return data.json() })
-                          .then(function(data) { return this.catastrophe = data }.bind(this))
+                          .then(function(data) { console.log(data); return this.catastrophe = data }.bind(this))
                           .then(function()     { return $scope.$apply() } );
       }.bind(this);
       fetchAndUpdateCatastrophe();
       $interval(fetchAndUpdateCatastrophe, 2000);
     };
+
+    this.startSimulation = function() {
+      catastropheService.startSimulation();
+      $window.location.reload();
+    }
 
     this.deleteReport = function(reportId) {
       catastropheService.deleteReport(this.catastrophe.id, reportId);
