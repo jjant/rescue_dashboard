@@ -73,10 +73,11 @@
               li.recent-item(ng-repeat="info in ctsCtrl.catastrophe.drone_reports")
                 p
                   | {{ info.message }}
-                a.drone-image(ng-href="{{info.image_url}}")
-                  | Ver imagen
-                button.delete-item(href="#" ng-click="ctsCtrl.deleteReport(info.id)")
-                  | REPORTAR
+                .actions(style="display:flex;height:100%")
+                  a.drone-image(ng-href="{{info.image_url}}" target="_blank")
+                    | Ver imagen
+                  button.delete-item(href="#" ng-click="ctsCtrl.deleteReport(info.id)")
+                    | REPORTAR
         .map-container.element
           h2.map-header.title-boxed
             | Zonas afectadas
