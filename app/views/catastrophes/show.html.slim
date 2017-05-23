@@ -2,7 +2,7 @@
 .catastrophe-info.hidden(catastrophe=[@lat, @lng])
 .page-container(ng-controller='catastrophesController as ctsCtrl')
   .simulation
-    button(type="button" ng-click='ctsCtrl.startSimulation()')
+    button.simulation-button.background-daintree(type="button" ng-click='ctsCtrl.startSimulation()')
       | Iniciar simulation
   .catastrophe-container(ng-init='catastrophe = ctsCtrl.catastrophe')
     .main-container
