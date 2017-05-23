@@ -17,7 +17,7 @@
         th.text-center.bold.max-width-400
           | Superficie afectada
         th.text-center.bold.max-width-400
-          | Finalizada
+          | Despliegue
 
     tbody class="table-hover"
       - @catastrophes.each do |catastrophe|
@@ -33,10 +33,12 @@
           td.text-center.max-width-400
             = catastrophe.agents_online
           td.text-center.max-width-400
-            | #{catastrophe.id.even? ? 'Si' : 'No'}
+            button.drones-button.white(type="button")
+              | DESPLEGAR DRONES
   javascript:
     $(() => {
       $('.js-link-to-catastrophe').click(function() {
-        window.location = $(this).data('catastrophe-url');
+        var that = this;
+        setTimeout(function() {window.location = $(that).data('catastrophe-url');}, 4000);
       })
     })

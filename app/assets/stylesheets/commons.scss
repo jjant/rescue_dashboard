@@ -310,3 +310,23 @@ body {
     text-decoration: none;
   }
 }
+
+.drones-button {
+  padding: 5px 15px;
+
+  display: flex;
+  align-items: center;
+  background: rgb(228, 95, 77);
+  font-weight: bold;
+  color:  white;
+  border: 0;
+
+ &,
+ &:link,
+ &:active,
+ &:hover,
+ &:visited {
+   color: white;
+   text-decoration: none;
+ }
+}
