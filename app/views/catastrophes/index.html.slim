@@ -37,8 +37,11 @@
               | DESPLEGAR DRONES
   javascript:
     $(() => {
+      var x = 0;
       $('.js-link-to-catastrophe').click(function() {
-        var that = this;
-        setTimeout(function() {window.location = $(that).data('catastrophe-url');}, 4000);
+        x++;
+        if (x > 1) {
+          window.location = $(this).data('catastrophe-url');
+        }
       })
     })
